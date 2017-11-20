@@ -46,16 +46,16 @@ h1, h2, h3 {
     font-family: 'Georgia', 'Times New Roman', Times, serif;
 }
 
-.menu {
-    max-width: 960px; /* slightly more flexible than width */
-    margin: 0 auto;
-}
-
 header {
     background: #0b1c26;
     border-bottom: 2px solid #d97a43;
     margin-bottom: 40px;
-    width: auto;
+    width: 100%;
+}
+
+.menu {
+    max-width: 960px; /* slightly more flexible than width */
+    margin: 0 auto;
 }
 
 .logo {
@@ -107,7 +107,7 @@ li a:hover {
 
 /* keep all the content centered on the page and only 960px wide */
 .wrapper {
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
     flex: 1 0 auto; /* more sticky footer code */
 }
@@ -277,7 +277,7 @@ img {
     font-size: 1em;
     font-family: 'Georgia', 'Times New Roman', Times, serif; 
     position: absolute;
-    width: 273px;
+    width: 93%;
     bottom: 25%;
 }
 
@@ -306,4 +306,67 @@ img {
     padding: 20px 0 40px 20px;
     float: left;
     position: relative;
+}
+
+/* Responsive queries */
+@media screen and (max-width: 980px) {
+    .menu,
+    .wrapper {
+        width: 75%;
+    }
+
+    .content {
+        width: 55%;
+        margin-right: 40px;
+        
+    }
+
+    #bio-image {
+        float: none;
+        display: block;
+        margin: auto;
+    }
+
+    input[type=submit] {
+        width: 35%;
+    }
+
+    .image1,
+    .image2,
+    .image3,
+    .image4 {
+        width: 100%;
+        padding: 0;
+        margin: 20px 0 20px 0;
+    }
+
+    .desc {
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .wrapper {
+        width: 100%;
+        
+    }
+
+    footer {
+        width: 100%;
+    }
+
 }
