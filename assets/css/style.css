@@ -1,0 +1,309 @@
+/* Stylesheet for all 3 .html files for this webpage */
+/* Colors: lighter blue: 084da6, midnight blue: #073359, black: #0b1c26, sandy brown: f2a950, peru: d97a43 */
+
+* {
+    box-sizing: border-box; /* Used to make sure that padding and margins are added to the total width and height of an element */
+}
+
+html, body {
+    height: 100%;/* used for the flex-box to have the sticky footer. this is the flexible part */
+    margin: auto; 
+    background: url("../images/dark_embroidery.png") rgb(54, 54, 54);
+}
+
+/* added so that after reset.css my headings were then set to default css settings */
+h1 { 
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.17em;
+    font-weight: bold;
+}
+
+/* begin styling components for all pages */
+a {
+    /* remove normal link decoration */
+    text-decoration: none;
+}
+
+body {
+    color: #666;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    display: flex; /* flex-box for sticky footer */
+    flex-direction: column;
+}
+
+h1, h2, h3 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+.menu {
+    max-width: 960px; /* slightly more flexible than width */
+    margin: 0 auto;
+}
+
+header {
+    background: #0b1c26;
+    border-bottom: 2px solid #d97a43;
+    margin-bottom: 40px;
+    width: auto;
+}
+
+.logo {
+    background: #084da6;
+    text-align: center;
+    float: left;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+/* fun bit of extra styling. button changes color when hovered over */
+.logo:hover {
+    background: #d97a43;
+}
+
+/* originally used positioning to place the nav buttons, but began looking more into display: flex and saw that you can vertically center elements in a div and so played around with it for a while and got the same result as positioning but now it is perfectly centered. */
+nav {
+    height: 94px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul {
+    margin: 0;
+    font-size: 1.1em; /* em stands for relative to the font-size element. so this is 1.1 times its font-size. this also helps a lot with resizing browser and such rather than a fixed pixel amount */
+}
+
+li {
+    float: right; /* keeps the nav bar aligned */
+}
+
+li a {
+    text-align: center;
+    padding: 0 16px;
+    color: #666666;
+}
+
+/* again change color on hover */
+li a:hover {
+    color: #084da6;
+}
+
+/* create the break between links on nav bar */
+#about, 
+#portfolio {
+    border-right: 1px solid #073359;
+}
+
+/* keep all the content centered on the page and only 960px wide */
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+    flex: 1 0 auto; /* more sticky footer code */
+}
+
+/* how I created the break between headings and content */
+hr {
+    background: #f2a950;
+    margin: 20px 0;
+    padding: 1.5px;
+    border: none;
+}
+
+.content {
+    background: #fff;
+    border: 2px solid #777;
+    float: left;
+    width: 650px;
+    padding: 0 30px 20px 30px;
+    margin: 0 20px 40px 0;
+}
+
+/* I made the .content h2 as large as an h1 but this way I only technically have one h1 for validation purposes */
+.content h2 {
+    color: #084da6;
+    padding-top: 10px;
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+aside {
+    width: 270px;
+    float: left;
+    background: #fff;
+    text-align: center;
+    border: 2px solid #777;
+    padding: 25px;
+}
+
+aside h3 {
+    color: #084da6;
+    font-size: 1.5em;
+    margin-top: 0.83em 0 0.83em 0;
+}
+
+.icons {
+    width: 33.3%;
+    float: left;
+    height: 33.3%;
+}
+
+footer {
+    padding: 20px;
+    clear: both;
+    background: #0b1c26;
+    font-size: .95em;
+    text-align: center;
+    color: #073359;
+    margin: 0;
+    border-top: 10px solid #d97a43;
+    display: block;
+}
+
+/* index.html specific code */
+#bio-image {
+    max-width: 200px;
+    float: left;
+    margin: 5px 20px 10px 0;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+
+/* contact.html specific code */
+input[type=text] {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0 20px 0;
+    color: #0b1c26;
+    border: 1.5px solid #777;
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type=email] {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0 20px 0;
+    color: #0b1c26;
+    border: 1.5px solid #777;
+    border-radius: 2px;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0 20px 0;
+    color: #0b1c26;
+    border: 1.5px solid #777;
+    border-radius: 2px;
+    outline: none;
+    resize: none; /* no resizing here */
+    overflow: hidden; /* remove scroll bar */
+}
+
+input[type=submit] {
+    background: #084da6;
+    text-align: center;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px 20px;
+    width: 20%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* change color when clicked */
+input[type=submit]:active {
+    background: #d97a43;
+}
+
+/* placeholder text in forms so that you dont have to delete the example text */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #777;
+  }
+::-moz-placeholder { /* Firefox 19+ */
+color: #777;
+}
+:-ms-input-placeholder { /* IE 10+ */
+color: #777;
+}
+:-moz-placeholder { /* Firefox 18- */
+color: #777;
+}
+
+/* portfolio.html specific code */
+/* Gryffindor */
+.image1 {
+    position: relative;
+    width: 50%;
+    height: auto;
+    padding: 20px 20px 40px 0;
+    float: left;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* show outline on hover */
+.gallery img:hover {
+    outline: 3px solid #084da6;
+    outline-offset: -3px;
+}
+
+/* text overlays */
+.desc {
+    padding: 10px 15px 7px 15px;
+    background: #084da6;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Georgia', 'Times New Roman', Times, serif; 
+    position: absolute;
+    width: 273px;
+    bottom: 25%;
+}
+
+/* Hufflepuff */
+.image3 {
+    width: 50%;
+    height: auto;
+    padding: 20px 20px 40px 0;
+    float: left;
+    position: relative;
+}
+
+/* Ravenclaw */
+.image2 {
+    width: 50%;
+    height: auto;
+    padding: 20px 0 40px 20px;
+    float: left;
+    position: relative;
+}
+
+/* Slytherin */
+.image4 {
+    width: 50%;
+    height: auto;
+    padding: 20px 0 40px 20px;
+    float: left;
+    position: relative;
+}
