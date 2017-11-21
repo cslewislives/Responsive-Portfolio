@@ -53,12 +53,13 @@ header {
     width: 100%;
 }
 
-.menu {
+.menu,
+#button-wrapper {
     max-width: 960px; /* slightly more flexible than width */
     margin: 0 auto;
 }
 
-.logo {
+#logo {
     background: #084da6;
     text-align: center;
     float: left;
@@ -67,13 +68,13 @@ header {
 }
 
 /* fun bit of extra styling. button changes color when hovered over */
-.logo:hover {
+#logo:hover {
     background: #d97a43;
 }
 
 /* originally used positioning to place the nav buttons, but began looking more into display: flex and saw that you can vertically center elements in a div and so played around with it for a while and got the same result as positioning but now it is perfectly centered. */
 nav {
-    height: 94px;
+    height: 5.8em;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -249,10 +250,9 @@ color: #777;
 
 /* portfolio.html specific code */
 /* Gryffindor */
-.image1 {
+.gryffindor {
     position: relative;
     width: 50%;
-    height: auto;
     padding: 20px 20px 40px 0;
     float: left;
 }
@@ -270,7 +270,7 @@ img {
 
 /* text overlays */
 .desc {
-    padding: 10px 15px 7px 15px;
+    padding: 5% 0;
     background: #084da6;
     color: white;
     text-align: center;
@@ -278,31 +278,28 @@ img {
     font-family: 'Georgia', 'Times New Roman', Times, serif; 
     position: absolute;
     width: 93%;
-    bottom: 25%;
+    bottom: 20%;
 }
 
 /* Hufflepuff */
-.image3 {
+.hufflepuff {
     width: 50%;
-    height: auto;
     padding: 20px 20px 40px 0;
     float: left;
     position: relative;
 }
 
 /* Ravenclaw */
-.image2 {
+.ravenclaw {
     width: 50%;
-    height: auto;
     padding: 20px 0 40px 20px;
     float: left;
     position: relative;
 }
 
 /* Slytherin */
-.image4 {
+.slytherin {
     width: 50%;
-    height: auto;
     padding: 20px 0 40px 20px;
     float: left;
     position: relative;
@@ -310,9 +307,19 @@ img {
 
 /* Responsive queries */
 @media screen and (max-width: 980px) {
+    
     .menu,
-    .wrapper {
+    .wrapper,
+    #button-wrapper {
         width: 75%;
+    }
+
+    #logo:active {
+        background: #d97a43;
+    }
+
+    li a:active {
+        color: #084da6;
     }
 
     .content {
@@ -331,42 +338,165 @@ img {
         width: 35%;
     }
 
-    .image1,
-    .image2,
-    .image3,
-    .image4 {
+    .gryffindor,
+    .ravenclaw,
+    .hufflepuff,
+    .slytherin {
         width: 100%;
         padding: 0;
-        margin: 20px 0 20px 0;
+        margin: 20px 0;
     }
 
     .desc {
         width: 100%;
+        bottom: 5%;
+    }
+
+    .gallery img:active {
+        outline: 3px solid #084da6;
+        outline-offset: -3px;
     }
 
 }
 
 
 @media screen and (max-width: 768px) {
-    .wrapper {
-        width: 100%;
-        
+    
+    #logo:active {
+        background: #d97a43;
     }
 
-    footer {
+    .menu {
         width: 100%;
+        padding: 0 1%;
+    }
+
+    li a:active {
+        color: #084da6;
+    }
+    
+    .wrapper,
+    #button-wrapper {
+        width: 100%;
+        padding: 0 2.5%;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    #bio-image {
+        float: left;
+        margin: 5px 20px 10px 0;
+    }
+
+    aside {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    aside h3 {
+        display: flex;
+        justify-content: left;
+    }
+
+    .icons {
+        width: 10%;
+    }
+
+    .gryffindor {
+        width: 50%;
+        padding-right: 2%;
+    }
+    
+    .ravenclaw {
+        width: 50%;
+        padding-left: 2%;
+    }
+    
+    .hufflepuff {
+        width: 50%;
+        padding-right: 2%;
+    }
+    
+    .slytherin {
+        width: 50%;
+        padding-left: 2%;
+    }
+
+    .desc {
+        width: 96%;
+    }
+
+    .gallery img:active {
+        outline: 3px solid #084da6;
+        outline-offset: -3px;
+    }
+
+    input[type=submit] {
+        width: 20%;
     }
 }
 
 
 @media screen and (max-width: 640px) {
-    .wrapper {
-        width: 100%;
-        
+    
+    #button-wrapper {
+        position: static;
+        width: 640px;
+        padding: 0;
     }
 
-    footer {
+    #logo {
         width: 100%;
+        margin: 0;
+    }
+
+    #logo:active {
+        background: #d97a43;
+    }
+    
+    nav {
+        clear: both;
+        height: 3.5em;
+        justify-content: center;
+    }
+
+    li a {
+        padding: 0 4em;
+    }
+
+    li a:active {
+        color: #084da6;
+    }
+
+    .wrapper {
+        width: 100%;
+    }
+
+    #bio-image {
+        float: none;
+        display: block;
+        margin: auto;
+    }
+
+    .gryffindor,
+    .ravenclaw,
+    .hufflepuff,
+    .slytherin {
+        width: 100%;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .desc {
+        width: 100%;
+        bottom: 5%;
+    }
+
+    .gallery img:active {
+        outline: 3px solid #084da6;
+        outline-offset: -3px;
     }
 
 }
